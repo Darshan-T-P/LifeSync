@@ -144,12 +144,6 @@ class _FinanceScreenState extends State<FinanceScreen> {
     return map;
   }
 
-  String _sourceLabel(String key) {
-    final src = _banks.where((b) => b.id == key).firstOrNull;
-    if (src != null) return src.name;
-    return sourceLabels[key] ?? key;
-  }
-
   Color _sourceColor(String key) {
     final src = _banks.where((b) => b.id == key).firstOrNull;
     if (src != null) {
