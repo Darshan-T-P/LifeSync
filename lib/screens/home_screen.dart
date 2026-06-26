@@ -145,8 +145,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(right: 6),
                   child: GestureDetector(
                     onTap: () => setSheetState(() {
-                      if (selected) selectedTags.remove(tag);
-                      else selectedTags.add(tag);
+                      if (selected) {
+                        selectedTags.remove(tag);
+                      } else {
+                        selectedTags.add(tag);
+                      }
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -173,8 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   _addNote(title, bodyCtrl.text.trim(), selectedTags);
                   Navigator.pop(context);
                 },
-                child: const Text('Save Note'),
                 style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+                child: const Text('Save Note'),
               ),
             ),
           ],
@@ -243,9 +246,14 @@ class _HomeScreenState extends State<HomeScreen> {
       final sorted = doneDates.toList()..sort((a, b) => b.compareTo(a));
       var cur = today;
       for (final d in sorted) {
-        if (d == cur) { streak++; cur = _addDays(cur, -1); }
-        else if (streak == 0 && d.compareTo(cur) < 0) break;
-        else break;
+        if (d == cur) {
+          streak++;
+          cur = _addDays(cur, -1);
+        } else if (streak == 0 && d.compareTo(cur) < 0) {
+          break;
+        } else {
+          break;
+        }
       }
       if (sorted.first != today && _daysBetween(sorted.first, today) > 1) streak = 0;
     }

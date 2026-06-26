@@ -12,7 +12,7 @@ class SupabaseService {
   Future<void> initialize() async {
     await Supabase.initialize(
       url: 'https://vhqajppzdilserxxsxgp.supabase.co',
-      anonKey: 'sb_publishable_wCcm8q0QBoWclGHHmxOjzQ_z9M5oDzJ',
+      publishableKey: 'sb_publishable_wCcm8q0QBoWclGHHmxOjzQ_z9M5oDzJ',
     );
   }
 

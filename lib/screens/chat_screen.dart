@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
         String fullReply = reply;
         if (actions.isNotEmpty) {
-          fullReply += '\n\n✅ ' + actions.join('\n✅ ');
+          fullReply += '\n\n✅ ${actions.join('\n✅ ')}';
         }
 
         setState(() {

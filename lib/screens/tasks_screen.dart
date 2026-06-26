@@ -303,7 +303,7 @@ class _TasksScreenState extends State<TasksScreen> {
             children: [
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _newPriority,
+                  initialValue: _newPriority,
                   decoration: _fieldDec(),
                   items: _priorities.map((p) => DropdownMenuItem(value: p, child: Text(p[0].toUpperCase() + p.substring(1), style: const TextStyle(fontSize: 13)))).toList(),
                   onChanged: (v) => setSheetState(() => _newPriority = v!),
@@ -312,7 +312,7 @@ class _TasksScreenState extends State<TasksScreen> {
               const SizedBox(width: 8),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _newCategory,
+                  initialValue: _newCategory,
                   decoration: _fieldDec(),
                   items: _categories.map((c) => DropdownMenuItem(value: c, child: Text(c, style: const TextStyle(fontSize: 13)))).toList(),
                   onChanged: (v) => setSheetState(() => _newCategory = v!),
@@ -322,7 +322,7 @@ class _TasksScreenState extends State<TasksScreen> {
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
-            value: _newRecurring,
+            initialValue: _newRecurring,
             decoration: _fieldDec(),
             items: [
               const DropdownMenuItem(value: '', child: Text('One-time', style: TextStyle(fontSize: 13))),
@@ -342,10 +342,10 @@ class _TasksScreenState extends State<TasksScreen> {
           const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
-            child: FilledButton(
-              onPressed: _addTask,
-              child: const Text('Add Task'),
-              style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+              child: FilledButton(
+                onPressed: _addTask,
+                style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+                child: const Text('Add Task'),
             ),
           ),
         ],

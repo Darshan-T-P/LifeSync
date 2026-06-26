@@ -389,7 +389,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
                       Text('Type', style: TextStyle(fontSize: 10, color: Colors.grey[400])),
                       const SizedBox(height: 4),
                       DropdownButtonFormField<String>(
-                        value: _goalType,
+                        initialValue: _goalType,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: Colors.grey[200]!)),
                           contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -449,8 +449,8 @@ class _GoalsScreenState extends State<GoalsScreen> {
               width: double.infinity,
               child: FilledButton(
                 onPressed: _addGoal,
-                child: const Text('Create Goal'),
                 style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+                child: const Text('Create Goal'),
               ),
             ),
           ],

@@ -488,8 +488,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
             width: double.infinity,
             child: FilledButton(
               onPressed: _addEvent,
-              child: const Text('Add Event'),
               style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+              child: const Text('Add Event'),
             ),
           ),
         ],

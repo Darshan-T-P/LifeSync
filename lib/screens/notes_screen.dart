@@ -298,8 +298,11 @@ class _NotesScreenState extends State<NotesScreen> {
                   padding: const EdgeInsets.only(right: 6),
                   child: GestureDetector(
                     onTap: () => setSheetState(() {
-                      if (selected) _selectedTags.remove(tag);
-                      else _selectedTags.add(tag);
+                      if (selected) {
+                        _selectedTags.remove(tag);
+                      } else {
+                        _selectedTags.add(tag);
+                      }
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -321,8 +324,8 @@ class _NotesScreenState extends State<NotesScreen> {
               width: double.infinity,
               child: FilledButton(
                 onPressed: _addNote,
-                child: const Text('Save Note'),
                 style: FilledButton.styleFrom(backgroundColor: AppTheme.primary),
+                child: const Text('Save Note'),
               ),
             ),
           ],
